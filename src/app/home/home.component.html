@@ -1,0 +1,40 @@
+<div class="relative flex flex-column gap-4 justify-content-center align-items-center" style="height: 100vh">
+  <div class="absolute top-0 right-0 m-3 flex flex-row-reverse">
+    <ng-container *ngIf="currentLang === 'fr'; else changeLanguageFr">
+      <p-button [rounded]="true" label="Français" (onClick)="translate('en')">
+        <span class="fi fi-fr mr-2"></span>
+      </p-button>
+    </ng-container>
+    <ng-template #changeLanguageFr>
+      <p-button [rounded]="true" label="English" (onClick)="translate('fr')">
+        <span class="fi fi-gb mr-2"></span>
+      </p-button>
+    </ng-template>
+    <p-button styleClass="mr-2" [rounded]="true" icon="pi" [label]="'joinDiscord' | translate" (onClick)="openBlank('https://discord.gg/X3JFEr6Gen')">
+      <i class="fa-brands fa-discord"></i>
+    </p-button>
+  </div>
+  <h1 class="font-bold">RUN ARENA</h1>
+  <div class="flex gap-3">
+    <div class="flex flex-column align-items-center bg-gray-700 p-2 border-round">
+      <span class="text-4xl font-semibold p-4">{{ days }}</span>
+      <div class="font-medium">{{ "days" | translate }}</div>
+    </div>
+    <div class="flex flex-column align-items-center bg-gray-700 p-2 border-round">
+      <span class="text-4xl font-semibold p-4">{{ hours }}</span>
+      <div class="font-medium">{{ "hours" | translate }}</div>
+    </div>
+    <div class="flex flex-column align-items-center bg-gray-700 p-2 border-round">
+      <span class="text-4xl font-semibold p-4">{{ minutes }}</span>
+      <div class="font-medium">{{ "minutes" | translate }}</div>
+    </div>
+    <div class="flex flex-column align-items-center bg-gray-700 p-2 border-round">
+      <span class="text-4xl font-semibold p-4">{{ seconds }}</span>
+      <div class="font-medium">{{ "seconds" | translate }}</div>
+    </div>
+  </div>
+
+  <div class="w-6 mt-3">
+    <app-twitch-player channel="nitro_speedrun"></app-twitch-player>
+  </div>
+</div>
