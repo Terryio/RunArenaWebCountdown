@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "route": "/index.html",
+      "allowedRoles": ["anonymous"]
+    }
+  ]
+}
